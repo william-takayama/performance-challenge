@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { Star, Clock } from 'react-feather';
 
 import '../styles/movie-card.scss';
@@ -34,3 +35,7 @@ export function MovieCard(props: MovieCardProps) {
     </div>
   )
 }
+
+export const MemoizedMovieCard = memo(MovieCard, (prevProps, nextProps) =>
+  Object.is(prevProps, nextProps)
+);
